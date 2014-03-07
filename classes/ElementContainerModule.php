@@ -15,7 +15,7 @@
 /**
  * Namespace
  */
-namespace CKElementContainer;
+namespace CK;
 
 
 /**
@@ -25,7 +25,7 @@ namespace CKElementContainer;
  * @author     Carsten Kollmeier
  * @package    Devtools
  */
-class CKElementContainerModule extends \Module
+class ElementContainerModule extends \Module
 {
 
 	/**

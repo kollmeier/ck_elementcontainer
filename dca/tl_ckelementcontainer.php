@@ -23,14 +23,14 @@ $GLOBALS['TL_DCA']['tl_ckelementcontainer'] = array
 	(
 		'dataContainer'               => 'Table',
 		'enableVersioning'            => true,
-//		'onsubmit_callback'	=> array
-//		(		
-//			array('CKElementContainerCallbacks','element_onsubmit')
-//		),
-//		'ondelete_callback'	=> array
-//		(
-//			array('CKElementContainerCallbacks','element_ondelete')
-//		),
+		'onsubmit_callback'	=> array
+		(		
+			array('ElementContainerCallbacks','element_onsubmit')
+		),
+		'ondelete_callback'	=> array
+		(
+			array('ElementContainerCallbacks','element_ondelete')
+		),
 		'ctable' => array('tl_ckelementcontainer_elements'),
 		'switchToEdit' => true,
 		'sql'              => array
@@ -137,6 +137,10 @@ $GLOBALS['TL_DCA']['tl_ckelementcontainer'] = array
 		(
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
 		),	
+		'invisible' => array
+		(
+			'sql'                     => "char(1) NOT NULL default ''"
+		),
 		'title' => array
 		(
 			'label'						=> &$GLOBALS['TL_LANG']['tl_ckelementcontainer']['title'],
@@ -149,12 +153,12 @@ $GLOBALS['TL_DCA']['tl_ckelementcontainer'] = array
 		'category' => array
 		(
 			'label'                 => &$GLOBALS['TL_LANG']['tl_ckelementcontainer']['category'],
-			'inputType'             => 'select',
+			'inputType'             => 'ck_combobox',
 			'exclude'				=> true,
 			'filter'				=> true,
-			'eval'                  => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50','chosen'=>true),
-			'options'      			=> array('contentelements'=>array_keys($GLOBALS['TL_CTE']),'modules'=>array_keys($GLOBALS['FE_MOD'])),
-			'reference'             => array_merge($GLOBALS['TL_LANG']['MSC'],$GLOBALS['TL_LANG']['CTE'],$GLOBALS['TL_LANG']['FMD']),
+			'eval'                  => array('mandatory'=>true, 'maxlength'=>255, 'tl_class'=>'w50'),
+			'options'      			=> array('labelContentelement'=>array_keys($GLOBALS['TL_CTE']),'labelFrontendmodule'=>array_keys($GLOBALS['FE_MOD'])),
+			'reference'             => array_merge($GLOBALS['TL_LANG']['MSC'],$GLOBALS['TL_LANG']['CTE'],$GLOBALS['TL_LANG']['FMD'],$GLOBALS['TL_LANG']['tl_ckelementcontainer']),
 			'sql'					=> "varchar(255) NOT NULL default ''"
 		),
 		'module' => array

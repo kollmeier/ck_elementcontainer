@@ -16,7 +16,7 @@
  */
 ClassLoader::addNamespaces(array
 (
-	'CKElementContainer',
+	'CK',
 ));
 
 
@@ -26,10 +26,10 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Classes
-	'CKElementContainer\CKElementContainer'          => 'system/modules/ck_elementcontainer/classes/CKElementContainer.php',
-	'CKElementContainer\CKElementContainerCallbacks' => 'system/modules/ck_elementcontainer/classes/CKElementContainerCallbacks.php',
-	'CKElementContainer\CKElementContainerContent'   => 'system/modules/ck_elementcontainer/classes/CKElementContainerContent.php',
-	'CKElementContainer\CKElementContainerModule'    => 'system/modules/ck_elementcontainer/classes/CKElementContainerModule.php',
+	'CK\ElementContainer'          => 'system/modules/ck_elementcontainer/classes/ElementContainer.php',
+	'CK\ElementContainerCallbacks' => 'system/modules/ck_elementcontainer/classes/ElementContainerCallbacks.php',
+	'CK\ElementContainerContent'   => 'system/modules/ck_elementcontainer/classes/ElementContainerContent.php',
+	'CK\ElementContainerModule'    => 'system/modules/ck_elementcontainer/classes/ElementContainerModule.php',
 ));
 
 

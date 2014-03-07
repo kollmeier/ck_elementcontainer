@@ -15,17 +15,17 @@
 /**
  * Namespace
  */
-namespace CKElementContainer;
+namespace CK;
 
 
 /**
- * Class CKElementContainerCallbacks
+ * Class CKElementContainerContent
  *
  * @copyright  2014
  * @author     Carsten Kollmeier
  * @package    Devtools
  */
-class CKElementContainerCallbacks extends \BackendModule
+class ElementContainerContent extends \Module
 {
 
 	/**

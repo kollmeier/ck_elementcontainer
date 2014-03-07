@@ -22,8 +22,6 @@ array_insert($GLOBALS['BE_MOD']['design'], 1, array
 		(
 			'tables' => array('tl_ckelementcontainer','tl_ckelementcontainer_fields'),
 			'icon'       => 'system/modules/ck_elementcontainer/assets/icons/icon.png',
-			'stylesheet'   => 'system/modules/ck_elementcontainer/assets/use_combobox.css',
-			'javascript'   => 'system/modules/ck_elementcontainer/assets/use_combobox.js'
 		)
 	));
 
@@ -52,7 +50,7 @@ if ($GLOBALS['TL_CONFIG']['ck_ec_content'])
 foreach ($arrModules as $strCategory => $arrElements)
 {
 	foreach ($arrElements as $strElement) {
-		$GLOBALS['FE_MOD'][$strCategory][CK_EC_PREFIX.$strElement]= 'CKElementContainerModule';
+		$GLOBALS['FE_MOD'][$strCategory][CK_EC_PREFIX.$strElement]= 'ElementContainerModule';
 	}
 }
 
@@ -60,7 +58,7 @@ foreach ($arrModules as $strCategory => $arrElements)
 foreach ($arrContent as $strCategory => $arrElements)
 {
 	foreach ($arrElements as $strElement) {
-		$GLOBALS['TL_CTE'][$strCategory][CK_EC_PREFIX.$strElement]= 'CKElementContainerContent';
+		$GLOBALS['TL_CTE'][$strCategory][CK_EC_PREFIX.$strElement]= 'ElementContainerContent';
 	}
 }
 
