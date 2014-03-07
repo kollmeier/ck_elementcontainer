@@ -15,7 +15,7 @@
 /**
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD'][''] = array('', '');
+$GLOBALS['TL_LANG']['MOD']['ck_ec'] = array('Elementcontainer', 'Content Elemente zu einem neuen Element zusammenfassen');
 
 
 /**

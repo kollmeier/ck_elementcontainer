@@ -15,120 +15,12 @@
 /**
  * Table tl_content
  */
-$GLOBALS['TL_DCA']['tl_content'] = array
-(
 
-	// Config
-	'config' => array
-	(
-		'dataContainer'               => 'Table',
-		'enableVersioning'            => true,
-		'sql' => array
-		(
-			'keys' => array
-			(
-				'id' => 'primary'
-			)
-		)
-	),
+// Define callbacks	
+//$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('CKElementContainerCallbacks','content_onload');
+//
+//if (TL_MODE == 'BE' && version_compare(VERSION.BUILD, '3.10','>=') && version_compare(VERSION.BUILD, '3.20','<'))
+//{
+//    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/ck_elementcontainer/html/CK-uncompressed.js';
+//}
 
-	// List
-	'list' => array
-	(
-		'sorting' => array
-		(
-			'mode'                    => 1,
-			'fields'                  => array(''),
-			'flag'                    => 1
-		),
-		'label' => array
-		(
-			'fields'                  => array(''),
-			'format'                  => '%s'
-		),
-		'global_operations' => array
-		(
-			'all' => array
-			(
-				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
-				'href'                => 'act=select',
-				'class'               => 'header_edit_all',
-				'attributes'          => 'onclick="Backend.getScrollOffset();" accesskey="e"'
-			)
-		),
-		'operations' => array
-		(
-			'edit' => array
-			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_content']['edit'],
-				'href'                => 'act=edit',
-				'icon'                => 'edit.gif'
-			),
-			'copy' => array
-			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_content']['copy'],
-				'href'                => 'act=copy',
-				'icon'                => 'copy.gif'
-			),
-			'delete' => array
-			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_content']['delete'],
-				'href'                => 'act=delete',
-				'icon'                => 'delete.gif',
-				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
-			),
-			'show' => array
-			(
-				'label'               => &$GLOBALS['TL_LANG']['tl_content']['show'],
-				'href'                => 'act=show',
-				'icon'                => 'show.gif'
-			)
-		)
-	),
-
-	// Select
-	'select' => array
-	(
-		'buttons_callback' => array()
-	),
-
-	// Edit
-	'edit' => array
-	(
-		'buttons_callback' => array()
-	),
-
-	// Palettes
-	'palettes' => array
-	(
-		'__selector__'                => array(''),
-		'default'                     => '{title_legend},title;'
-	),
-
-	// Subpalettes
-	'subpalettes' => array
-	(
-		''                            => ''
-	),
-
-	// Fields
-	'fields' => array
-	(
-		'id' => array
-		(
-			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-		),
-		'tstamp' => array
-		(
-			'sql'                     => "int(10) unsigned NOT NULL default '0'"
-		),
-		'title' => array
-		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['title'],
-			'exclude'                 => true,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>255),
-			'sql'                     => "varchar(255) NOT NULL default ''"
-		)
-	)
-);
